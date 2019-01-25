@@ -33,10 +33,10 @@ require "capistrano/bundler"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations" unless ENV['disable_db'] == '1'
 require "capistrano/puma"
-require "capistrano/sidekiq"
-require "capistrano/sidekiq/monit"
+#require "capistrano/sidekiq"
+#require "capistrano/sidekiq/monit"
 install_plugin Capistrano::Puma
-install_plugin Capistrano::Puma::Monit
+#install_plugin Capistrano::Puma::Monit
 # require "capistrano/passenger"
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined

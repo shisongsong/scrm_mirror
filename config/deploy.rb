@@ -22,7 +22,12 @@ set :pty, true
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 
-append :linked_files, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "node_modules"
+set :linked_dirs, %w{
+  log
+  tmp
+  public
+  node_modules
+}
 
 set :keep_releases, 5
 
