@@ -65,6 +65,7 @@ role :app, host
 role :web, host
 role :db,  host
 
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :rails_env, :production
 set :rack_env, :production
 
