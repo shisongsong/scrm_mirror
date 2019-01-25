@@ -11,7 +11,7 @@ set :rvm_ruby_version, '2.4.4'
 set :branch, ENV["branch"] || "master"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/apps/#{fetch(:application)}"
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
 set :deploy_via, :remote_cache
 
