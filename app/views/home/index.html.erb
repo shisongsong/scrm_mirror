@@ -1,0 +1,692 @@
+<header class="clearfix">
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="logo" rel="">
+            <a href="#">
+              <img src="<%= image_path 'logo_1.png' %>" alt="logo" class="img-responsive center-block" />
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div id="nav-index" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="#top"data-location="top" class="active">首页</a></li>
+              <li><a href="#situation"data-location="situation" >关于我们</a></li>
+              <li><a href="#business" data-location="business">产品服务</a></li>
+              <li><a href="#view" data-location="view">市场纵览</a></li>
+              <li><a href="#contactus" data-location="contactus">联系我们</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <a href="Login.html" class="btn btn-login-index">登录</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom clearfix">
+    <div id="carousel-banner" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="<%= image_path 'city01.jpg' %>" width="100%" alt="华港财富" />
+          <div class="carousel-content">
+            <div class="container">
+              <div class="carousel-content-panel text-center hidden-xs">
+                <h2>华港财富私人银行家招募及培训计划</h2>
+                <h3 onclick="openPDF();" style="cursor:pointer;">Join Us</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="<%= image_path 'city02.jpg' %>" width="100%" alt="华港财富" />
+          <div class="carousel-content">
+            <div class="container">
+              <div class="carousel-content-panel text-center hidden-xs">
+                <h2>值得您信赖的离岸财富管理合作伙伴</h2>
+                <h3>Trust is Our Responsibility</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-banner" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-banner" data-slide-to="1"></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="holder clearfix">
+  <div class="location" id="situation" style="bottom:0;"></div>
+  <div class="situation-holder item">
+    <div class="title center-block">
+      <h4>华港格局</h4>
+      <div class="underline"></div>
+    </div>
+    <div class="container container-fluid no-padding">
+      <div class="row no-margin">
+        <img src="<%= image_path 'holder_01.jpg' %>" width="100%" />
+      </div>
+    </div>
+  </div>
+
+  <div class="aboutus-holder item">
+    <div class="title center-block">
+      <h4>关于我们</h4>
+      <div class="underline"></div>
+    </div>
+    <div class="container container-fluid no-padding">
+      <div class="row no-margin">
+        <p class="text-muted">
+          华港财富专注为中国的高净值及超高净值客户及其家庭提供量身定制的离岸私人银行和家族办公室服务。我们的合伙人及管理团队由来自国际著名私人银行，投资银行，家族办公室，私募基金，资产管理机构和保险公司的专业人士组成，凭借丰富的财富管理经验与专注中国市场的背景，助力您紧握本土及全球市场的投资机会。
+        </p>
+        <p class="text-muted">
+          我们立足香港，服务全球华人，不仅在亚太地区（新加坡和香港）为客户提供离岸服务，还在欧洲金融中心苏黎世，与美国西海岸设立户口中心协助客户轻松实现全球化开户与交易。在产品供应端，我们携手32家投资银行，私人银行和券商，为客户提供多元化的产品和一站式的金融服务，助力客户实现全球化的资产配置和财富传承。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="location" id="business"></div>
+  <div class="business-holder item">
+    <div class="title center-block">
+      <h4>业务布局</h4>
+      <div class="underline"></div>
+    </div>
+    <div class="container container-fluid no-padding">
+      <div class="row no-margin">
+        <div class="col-sm-3 view view-home">
+          <img src="<%= image_path 'bus_01.jpg' %>" alt="私人银行" width="100%" />
+          <div class="mask">
+            <h6>私人银行</h6>
+            <p>
+              私人银行服务是银行服务的一种，专门面向富有阶层，为其个人及家庭提供财产投资与管理的服务，华港财富集团专注于为中国的高净值及超高净值家庭提供量身定制的私人银行和家族办公室服务。
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-3 view view-home">
+          <img src="<%= image_path 'bus_02.jpg' %>" alt="资产管理" width="100%" />
+          <div class="mask">
+            <h6>资产管理</h6>
+            <p>
+              根据客户目标，进行全权委托投资管理、监控及风险管理，为客户省去繁琐的交易流程。                           
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-3 view view-home">
+          <img src="<%= image_path 'bus_03.jpg' %>" alt="资本市场" width="100%" />
+          <div class="mask">
+            <h6>资本市场</h6>
+            <p>
+              公司、政府或公共部门在一级市场通过向投资者发行新的股票和债券来进行融资，存在不少稀缺、高回报的优质投资机会。                      
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-3 view view-home">
+          <img src="<%= image_path 'bus_04.jpg' %>" alt="信托及保险经纪" width="100%" />
+          <div class="mask">
+            <h6>信托及保险经纪</h6>
+            <p>
+              我们根据高净值客户及其家庭成员的不同诉求，为他们提供包括万用寿险，储蓄投资，重大疾病在内的多种保险解决方案，以便在意外情况发生时，最大限度弥补经济损失，保障家庭财务的安全。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-holder item" id="service">
+    <div class="title center-block">
+      <h4>华港服务</h4>
+      <div class="underline"></div>
+    </div>
+    <div class="container container-fluid no-padding">
+      <div class="row no-margin">
+        <p class="text-muted">
+          我们协助客户管理在境外的金融资产，以客户的私人银行与券商户口为主要平台，强调户口信息的保密性，突出投资的稳健性。我们的解决方案与服务包括但不限于：设立离岸公司架构，开立离岸银行户口，产品供应询价，设立家族信托，财富传承方案，投资组合管理，税务意见与咨询。
+        </p>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+  </div>
+
+  <div class="contactus-holder">
+    <img src="<%= image_path 'clock.jpg' %>" width="100%" />
+  </div>
+
+  <div class="value-holder item" id="value">
+    <div class="title center-block">
+      <h4>价值理念</h4>
+      <div class="underline"></div>
+    </div>
+    <div class="container container-fluid no-padding">
+      <div class="row no-margin">
+        <div class="col-sm-4 cell">
+          <h5>经营理念</h5>
+          <span>专业、稳健、卓越</span>
+        </div>
+        <div class="col-sm-4 cell">
+          <h5>企业愿景</h5>
+          <span>致力于成为中国最优秀的离岸财富管理机构</span>
+        </div>
+        <div class="col-sm-4 cell">
+          <h5>核心价值观</h5>
+          <span>以客户为优先，以人才为核心</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location" id="view"></div>
+  <div class="view-holder item">
+    <div class="title center-block">
+      <h4>市场纵览</h4>
+      <div class="underline"></div>
+    </div>
+    <div class="container container-fluid no-padding">
+      <div class="row no-margin">
+        <div class="table-responsive col-sm-6 cell">
+          <table class="table" id="tb_view">
+            <thead>
+              <tr>
+                <th>代码</th>
+                <th>最新成交价</th>
+                <th>时间</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-group">
+                <td colspan="5">亚太市场</td>
+              </tr>
+              <tr class="table-item" data-index="1012">
+                <td>CSI 300 Index</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-cn.png' %>" /></td>
+                <td class="nation" >[China]</td>
+              </tr>
+              <tr class="table-item" data-index="1015">
+                <td>HSI</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-hk.png' %>" /></td>
+                <td>[Hong Kang]</td>
+              </tr>
+              <tr class="table-item" data-index="1020">
+                <td>Nikkei 225</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-jp.png' %>" /></td>
+                <td>[Japan]</td>
+              </tr>
+              <tr class="table-item" data-index="1022">
+                <td>KOSPI</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-kr.png' %>" /></td>
+                <td>[Korea]</td>
+              </tr>
+              <tr class="table-group">
+                <td colspan="5">美洲市场</td>
+              </tr>
+              <tr class="table-item" data-index="1111">
+                <td>DJIA</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-us.png' %>" /></td>
+                <td>[America]</td>
+              </tr>
+              <tr class="table-item" data-index="1112">
+                <td>S&P 500</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-us.png' %>" /></td>
+                <td>[America]</td>
+              </tr>
+              <tr class="table-item" data-index="1114">
+                <td>NASDAQ</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-us.png' %>" /></td>
+                <td>[America]</td>
+              </tr>
+              <tr class="table-group">
+                <td colspan="5">欧非中东</td>
+              </tr>
+              <tr class="table-item" data-index="1217">
+                <td>FTSE 100</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-en.png' %>" /></td>
+                <td>[England]</td>
+              </tr>
+              <tr class="table-item" data-index="1241">
+                <td>CAC 40</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-fr.png' %>" /></td>
+                <td>[France]</td>
+              </tr>
+              <tr class="table-item" data-index="1238">
+                <td>DAX</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-de.jpg' %>" /></td>
+                <td>[Germany]</td>
+              </tr>
+              <tr class="table-item" data-index="1237">
+                <td>STOXX</td>
+                <td class="last_price">11523.81</td>
+                <td class="uptime">17:45:00</td>
+                <td class="icon"><img src="<%= image_path 'icon-eu.png' %>" /></td>
+                <td>[Europe]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-6 cell">
+          <img src="<%= image_path 'index_05.jpg' %>" width="100%" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location" id="contactus"></div>
+  <div class="contactus-holder item">
+    <div class="title center-block">
+      <h4>联系我们</h4>
+      <div class="underline"></div>
+    </div>
+    <div class="container container-fluid no-padding">
+      <div class="row no-margin">
+        <div class="table-responsive col-sm-6 cell">
+          <!--<img src="../../Content/themes/default/images/map_01.jpg" width="100%" />-->
+          <div id="china-map"></div>
+        </div>
+        <div class="col-sm-6 col-md-4 cell">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <p>我们为客户提供全方位的财富管理建议和投资方案，请提供您的联系方式，以便让我们的财务顾问跟您取得联系。</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= hidden_field_tag request_forgery_protection_token.to_s,
+                form_authenticity_token %> 
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="name" placeholder="姓名" />
+              </div>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="tel" placeholder="电话" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <textarea class="form-control" rows="5" id="msg" placeholder="留言"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <a class="btn btn-sendmail" id="SendEmail">提交</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="row no-margin">
+        <div class="col-sm-10">
+          <table class="table city-list" id="city-list">
+            <thead>
+              <tr>
+                <th>地址</th>
+                <th>电话</th>
+                <th>邮箱</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-city="hangzhou">
+                <td>ADD: 杭州市江干区新业路228号来福士中心T2办公楼1703室</td>
+                <td>TEL: 0571-8805-8596</td>
+                <td>enquiry@fargowealth.com.hk</td>
+              </tr>
+              <tr data-city="suzhou">
+                <td>ADD: 苏州市园区旺墩路269号星座商务广场1幢803室</td>
+                <td>TEL: 0512-6731-8676</td>
+                <td>enquiry@fargowealth.com.hk</td>
+              </tr>
+              <tr data-city="qingdao">
+                <td>ADD: 山东省青岛市崂山区秦岭路8号16楼</td>
+                <td>TEL: 0532-6869-3562</td>
+                <td>enquiry@fargowealth.com.hk</td>
+              </tr>
+              <tr data-city="xianggang" style="display:table-row;">
+                <td>ADD: 香港中环德辅道19号环球大厦27楼</td>
+                <td>TEL: +852-3977-0586</td>
+                <td>enquiry@fargowealth.com.hk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-2">
+          <div style="padding-left:10px;">
+            <img src="<%= image_path 'ERCode.jpg' %>" style="width: 85px;margin-top: 40px;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+
+
+    <div class="row">
+      <div class="col-sm-4">
+        <h4><i class="glyphicon glyphicon-copyright-mark"></i>2018 华港财富版权所有。</h4>
+      </div>
+      <div class="col-sm-offset-6 col-sm-2">
+        <h4><a href="mailto:enquiry@fargowealth.com.hk?sbuject=''">加入我们</a></h4>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- 回到顶部 -->
+<div class="container" style="position: relative;">
+  <div style="position: absolute; right: -30px;">
+    <div id="back-to-top" class="box">
+      <div class="box-in"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var navBoxList = $('#nav-index a');
+var text = $('.location');
+window.onload = function () {
+  for (var i = 0; i < inxids.length; i++) {
+    getdata(inxids[i]);
+  }
+};
+
+window.onscroll = function () {
+  var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+  var hegih = $('header').outerHeight();
+  console.log(hegih)
+  if (scrollTop > 1200) {
+    $('#back-to-top').show();
+  }
+  else {
+    $('#back-to-top').hide();
+  }
+  for (var i = 0; i < navBoxList.length-1; i++) {
+    if (scrollTop + 1 >= text[i].offsetTop + hegih) {
+      for (var j = 0; j < text.length + 1; j++) {
+        navBoxList[j].className = "";
+      }
+      navBoxList[i + 1].className = "active";
+    }
+  }
+  if (scrollTop < text[0].offsetTop + hegih) {
+    for (var j = 1; j < navBoxList.length; j++) {
+      navBoxList[j].className = "";
+    }
+    navBoxList[0].className = "active";
+  }
+};
+
+//$('#nav-index a').click(function () {
+//  var hegih = $('header').outerHeight();
+//  var loc = $(this).attr("data-location");
+//  if (loc == 'top') {
+//    document.documentElement.scrollTop = 0;
+//    window.pageYOffset = 0;
+//    document.body.scrollTop = 0;
+//    return;
+//  }
+//  for (var i = 0; i < text.length; i++) {
+//    if (loc == text[i].id) {
+//      document.documentElement.scrollTop = text[i].offsetTop + hegih;
+//      window.pageYOffset = text[i].offsetTop + hegih;
+//      document.body.scrollTop = text[i].offsetTop + hegih;
+//    }
+//  }
+//});
+
+function openPDF() {
+  window.open("../../Content/fargowealth_PDF.pdf", "name=华港财富私行游学PDF");
+}
+
+$("#back-to-top").click(function () {
+  //$('body,html').animate({scrollTop:0},1000);
+  if ($('html').scrollTop()) {
+    $('html').animate({ scrollTop: 0 }, 1000);
+    return false;
+  }
+  $('body').animate({ scrollTop: 0 }, 1000);
+  return false;
+});
+
+var inxids = [1012, 1015, 1020, 1022, 1111, 1112, 1114, 1217, 1241, 1238, 1237];
+
+function getdata(i) {
+  $.ajax({
+    url: "http://api.k780.com/?app=finance.globalindex&inxids=" + i + "&appkey=38871&sign=1244e07a9067d25085e3d0d45e4acab0&format=json",
+    type: "get",
+    dataType: "jsonp",
+    jsonp: 'jsoncallback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+    //jsonpCallback: 'data', //设置回调函数名
+    success: function (data) {
+      try {
+        //alert(data);
+        //alert(data.result.lists[i].last_price);
+        var $obj = $('#tb_view').find('.table-item[data-index=' + i + ']');
+        $obj.find('.last_price').text(data.result.lists[i].last_price);
+        $obj.find('.uptime').text(data.result.lists[i].uptime);
+
+      } catch (e) {
+        return false;
+      }
+    },
+    error: function (ex) {
+      alert(ex.status);
+      alert(ex.msg);
+    },
+    complete: function (XMLHttpRequest, textStatus) {
+      //alert(this.url);
+      //this;    //调用本次ajax请求时传递的options参数
+    }
+  });
+}
+
+setTimeout(function () {
+  for (var i = 0; i < inxids.length; i++) {
+    getdata(inxids[i]);
+  }
+}, 1000 * 60);
+
+$(document).on("click", "#SendEmail", function () {
+  var data = {
+    authenticity_token: $('#authenticity_token').val(),
+    subject: "华港财富",
+    website: "enquiry@fargowealth.com.hk",
+    name: $('#name').val(),
+    tel: $('#tel').val(),
+    msg: $('#msg').val()
+  }
+
+  $.ajax({
+    url: "/send_email",
+    method: "POST",
+    dataType: "Script",
+    data: data
+  })
+  //var body = "姓名：" + name + "<br/> 电话：" + tel + "<br />留言：" + msg;
+  //var url = "mailto:" + website + "?subject=" + subject + "&body=" + body;
+  //$("#SendEmai").val("href", url);
+  //return fasle;
+});
+
+var myChart = echarts.init(document.getElementById('china-map'));
+
+var cities = ['qingdao', 'suzhou', 'beijing', 'hangzhou', 'xianggang'];
+
+var citiesText = ['青岛', '苏州', '北京', '杭州', '香港'];
+
+
+var data = [
+  { name: '青岛', value: 8, color: '#b68a4a' },
+  { name: '苏州', value: 8, color: '#b68a4a' },
+  { name: '北京', value: 8, color: '#b68a4a' },
+  { name: '杭州', value: 8, color: '#b68a4a' },
+  { name: '香港', value: 8, color: '#bb1b23' }
+];
+
+var geoCoordMap = {
+  '青岛': [120.33, 36.07],
+  '苏州': [120.62, 32.32],
+  '北京': [116.46, 39.92],
+  '杭州': [120.19, 30.26],
+  '香港': [113.46, 22.26]
+};
+
+var convertData = function (data) {
+  var res = [];
+  for (var i = 0; i < data.length; i++) {
+    var geoCoord = geoCoordMap[data[i].name];
+    if (geoCoord) {
+      res.push({
+        name: data[i].name,
+        value: geoCoord.concat(data[i].value),
+        itemStyle: { color: data[i].color }
+      });
+    }
+  }
+  return res;
+};
+
+initEcharts("china", "中国");
+
+// 初始化echarts
+function initEcharts(pName, Chinese_) {
+
+  var option = {
+    title: {
+      show: false
+    },
+    geo: {
+      map: pName,
+      label: {
+        emphasis: {
+          show: false
+        }
+      },
+      itemStyle: {
+        normal: {
+          areaColor: '#e6e6e6',
+          borderColor: '#c0c0c0'
+        },
+        emphasis: {
+          areaColor: '#eee'
+        }
+      }
+    },
+    hoverLink: false,
+    series: [
+      {
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        symbolSize: function (val) {
+          return val[2];
+        },
+        showEffectOn: 'emphasis',
+        rippleEffect: {
+          brushType: 'stroke'
+        },
+        hoverAnimation: true,
+        roam: false,//是否开启鼠标缩放和平移漫游
+        data: convertData(data),
+        top: "1%",//组件距离容器的距离
+        zoom: 1.1,
+        selectedMode: 'single',
+        label: {
+          normal: {
+            formatter: '{b}',
+            position: 'right',
+            show: true
+          }
+        },
+        textStyle: {
+          fontFamily: "SiYuan",
+          fontSize: 14
+        },
+        itemStyle: {
+          normal: {
+            borderWidth: .5,//区域边框宽度
+            //borderColor: '#c0c0c0',//区域边框颜色
+            //areaColor: "#e0e0e0"//区域颜色
+            //color: '#b68a4a',
+          },
+          emphasis: {
+            borderWidth: 1
+          }
+        }
+      }
+    ]
+
+  };
+
+  myChart.setOption(option);
+
+  myChart.off("click");
+
+  if (pName === "china") { // 全国时，添加click 进入省级
+    myChart.on('click', function (param) {
+      console.log(param.name);
+      var res = [];
+
+      // 遍历取到citiesText 
+      for (var i = 0; i < citiesText.length; i++) {
+        if (param.name === citiesText[i]) {
+          data[i].color = '#bb1b23';
+          //var geoCoord = geoCoordMap[citiesText[i]];
+          //res.push({
+          //    name: param.name,
+          //    value: geoCoord.concat(data[i].value),
+          //    itemStyle: { color: '#bb1b23', }
+          //});
+          //显示对应城市的联系方法
+          var city = cities[i];
+          $('#city-list').find('tbody tr').hide().siblings('[data-city = ' + city + ']').show();
+          //break;
+        }
+        else {
+          data[i].color = '#b68a4a';
+          //var geoCoord = geoCoordMap[citiesText[i]];
+          //res.push({
+          //    name: citiesText[i],
+          //    value: geoCoord.concat(data[i].value),
+          //    itemStyle: { color: '#b68a4a', }
+          //});
+        }
+      }
+      myChart.setOption({
+        series: [
+          {
+            data: convertData(data)
+          }
+        ]
+      });
+
+    });
+  }
+}
+</script>
