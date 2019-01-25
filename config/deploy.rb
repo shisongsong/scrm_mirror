@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "scrm_mirror"
-set :repo_url, "git@github.com:shisongsong/scrm_mirror.git"
+set :repo_url, "https://halobrys@bitbucket.org/halobrys/scrm_mirror.git"
 
 set :rvm_ruby_version, '2.4.4'
 
