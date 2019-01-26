@@ -5,6 +5,11 @@ class HomeMailer < ApplicationMailer
     @msg = params[:msg]
 
     #返回mail对象
-    mail(:subject => params[:subject], :to => "shi1400875096@outlook.com", :date => Time.now)   
+    mail(
+      :subject => params[:subject],
+      #:to => "enquiry@fargowealth.com.hk",
+      :to => "1400875096@qq.com",
+      :date => Time.now
+    )
   end
 end

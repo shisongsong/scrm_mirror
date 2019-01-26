@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="col-sm-2">
-          <a href="Login.html" class="btn btn-login-index">登录</a>
+          <%= link_to "登录", login_path, class: "btn btn-login-index" %>
         </div>
       </div>
     </div>
@@ -35,7 +35,8 @@
             <div class="container">
               <div class="carousel-content-panel text-center hidden-xs">
                 <h2>华港财富私人银行家招募及培训计划</h2>
-                <h3 onclick="openPDF();" style="cursor:pointer;">Join Us</h3>
+                <h3 id="open_pdf" data-src="/fargowealth_PDF.pdf"
+                   style="cursor:pointer;">Join Us</h3>
               </div>
             </div>
           </div>
@@ -401,7 +402,7 @@
 </footer>
 <!-- 回到顶部 -->
 <div class="container" style="position: relative;">
-  <div style="position: absolute; right: -30px;">
+  <div style="position: absolute; right: 0px;">
     <div id="back-to-top" class="box">
       <div class="box-in"></div>
     </div>
@@ -461,9 +462,9 @@ window.onscroll = function () {
 //  }
 //});
 
-function openPDF() {
-  window.open("../../Content/fargowealth_PDF.pdf", "name=华港财富私行游学PDF");
-}
+$('#open_pdf').on('click', function() {
+  window.open($(this).data('src'), "name=华港财富私行游学PDF");
+})
 
 $("#back-to-top").click(function () {
   //$('body,html').animate({scrollTop:0},1000);

@@ -94,18 +94,18 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.smtp_settings = {
-    #address:              'smtp.qq.com',
-    #port:                 587,
-    #user_name:            's.pan@foxmail.com',
-    #password:             'Sherry162201',
-    #authentication:       'plain',
-    #enable_starttls_auto_now: true
-    address:              'smtp.163.com',
-    port:                 25,
-    domain:               '163.com',
-    user_name:            'energypantry_dev@163.com',
-    password:             'xinxin1hao',
+    address:              'smtp.qq.com',
+    port:                 587,
+    user_name:            '849431757@qq.com',
+    password:             'aypzwzspmzzybbae',
     authentication:       :login,
-    enable_starttls_auto: true
+    enable_starttls_auto_now: true
+    #address:              'smtp.163.com',
+    #port:                 25,
+    #domain:               '163.com',
+    #user_name:            'energypantry_dev@163.com',
+    #password:             'xinxin1hao',
+    #authentication:       :login,
+    #enable_starttls_auto: true
   }
 end

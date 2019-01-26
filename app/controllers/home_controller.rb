@@ -5,15 +5,19 @@ class HomeController < ApplicationController
   end
 
   def send_email
-    if msg = HomeMailer.with(params).send_email.deliver
-p msg
+    begin
+      HomeMailer.with(params).send_email.deliver!
       @errors = nil
-    else
+    rescue => err
+      logger.error err
       @errors = "发送失败"
     end
 
     respond_to do |format|
       format.js
     end
+  end
+
+  def login
   end
 end
