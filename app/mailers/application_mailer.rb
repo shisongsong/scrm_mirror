@@ -1,5 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  #default from: 's.pan@foxmail.com'
-  default from: '849431757@qq.com'
+  default from: Rails.configuration.x.default_from
   layout 'mailer'
 end

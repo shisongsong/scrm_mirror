@@ -7,8 +7,7 @@ class HomeMailer < ApplicationMailer
     #返回mail对象
     mail(
       :subject => params[:subject],
-      #:to => "enquiry@fargowealth.com.hk",
-      :to => "1400875096@qq.com",
+      :to => Rails.configuration.x.default_to,
       :date => Time.now
     )
   end

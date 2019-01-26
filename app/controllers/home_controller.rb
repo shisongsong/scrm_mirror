@@ -5,12 +5,12 @@ class HomeController < ApplicationController
   end
 
   def send_email
+    @errors = nil
     begin
       HomeMailer.with(params).send_email.deliver!
-      @errors = nil
     rescue => err
       logger.error err
-      @errors = "发送失败"
+      @errors = "服务器繁忙，请稍后再试"
     end
 
     respond_to do |format|

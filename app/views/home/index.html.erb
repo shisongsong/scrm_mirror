@@ -515,6 +515,20 @@ setTimeout(function () {
 }, 1000 * 60);
 
 $(document).on("click", "#SendEmail", function () {
+  var err = null
+  if(!$('#tel').val()) {
+    err = "请输入您的电话"
+  }
+
+  if(!$('#name').val()) {
+    err = "请输入您的姓名"
+  }
+
+  if(err) {
+    alert(err)
+    return
+  }
+
   var data = {
     authenticity_token: $('#authenticity_token').val(),
     subject: "华港财富",
@@ -524,6 +538,7 @@ $(document).on("click", "#SendEmail", function () {
     msg: $('#msg').val()
   }
 
+  $(this).html('发送中...')
   $.ajax({
     url: "/send_email",
     method: "POST",

@@ -1,5 +1,6 @@
 <% if @errors %>
-  alert(<%= @errors %>)
+  alert('<%= @errors %>')
 <% else %>
   alert("发送成功")
 <% end %>
+$('#SendEmail').html('提交')

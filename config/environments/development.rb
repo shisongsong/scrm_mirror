@@ -68,12 +68,8 @@ Rails.application.configure do
     password:             'aypzwzspmzzybbae',
     authentication:       :login,
     enable_starttls_auto_now: true
-    #address:              'smtp.163.com',
-    #port:                 25,
-    #domain:               '163.com',
-    #user_name:            'energypantry_dev@163.com',
-    #password:             'xinxin1hao',
-    #authentication:       :login,
-    #enable_starttls_auto: true
   }
+
+  config.x.default_from = "849431757@qq.com"
+  config.x.default_to = "1400875096@qq.com"
 end
