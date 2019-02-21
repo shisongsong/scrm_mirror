@@ -1,0 +1,274 @@
+﻿<script>
+  var navBoxList = $('#nav-index a');
+var text = $('.location');
+window.onload = function () {
+  for (var i = 0; i < inxids.length; i++) {
+    getdata(inxids[i]);
+  }
+};
+window.onscroll = function () {
+  var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+  var hegih = $('header').outerHeight();
+  if (scrollTop > 1200) {
+    $('#back-to-top').show();
+  }
+  else {
+    $('#back-to-top').hide();
+  }
+  for (var i = 0; i < navBoxList.length-1; i++) {
+    if (scrollTop + 1 >= text[i].offsetTop + hegih) {
+      for (var j = 0; j < text.length + 1; j++) {
+        navBoxList[j].className = "";
+      }
+      navBoxList[i + 1].className = "active";
+    }
+  }
+  if (scrollTop < text[0].offsetTop + hegih) {
+    for (var j = 1; j < navBoxList.length; j++) {
+      navBoxList[j].className = "";
+    }
+    navBoxList[0].className = "active";
+  }
+};
+
+$('#nav-index a').click(function () {
+  var hegih = $('header').outerHeight();
+  var loc = $(this).attr("data-location");
+  if (loc == 'top') {
+    document.documentElement.scrollTop = 0;
+    window.pageYOffset = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  for (var i = 0; i < text.length; i++) {
+    if (loc == text[i].id) {
+      document.documentElement.scrollTop = text[i].offsetTop + hegih;
+      window.pageYOffset = text[i].offsetTop + hegih;
+      document.body.scrollTop = text[i].offsetTop + hegih;
+    }
+  }
+});
+
+function openPDF() {
+  window.open("../../Content/fargowealth_PDF.pdf", "name=华港财富私行游学PDF");
+}
+
+$("#back-to-top").click(function () {
+  //$('body,html').animate({scrollTop:0},1000);
+  if ($('html').scrollTop()) {
+    $('html').animate({ scrollTop: 0 }, 1000);
+    return false;
+  }
+  $('body').animate({ scrollTop: 0 }, 1000);
+  return false;
+});
+
+var inxids = [1012, 1015, 1020, 1022, 1111, 1112, 1114, 1217, 1241, 1238, 1237];
+
+function getdata(i) {
+  $.ajax({
+    url: "http://api.k780.com/?app=finance.globalindex&inxids=" + i + "&appkey=38871&sign=1244e07a9067d25085e3d0d45e4acab0&format=json",
+    //date: { app:"finance.globalindex", inxids:i, appkey:38871, sign:"1244e07a9067d25085e3d0d45e4acab0", format:"json" },
+    type: "get",
+    dataType: "jsonp",
+    jsonp: 'jsoncallback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+    //jsonpCallback: 'data', //设置回调函数名
+    success: function (data) {
+      try {
+        //alert(data);
+        //alert(data.result.lists[i].last_price);
+        var $obj = $('#tb_view').find('.table-item[data-index=' + i + ']');
+        $obj.find('.last_price').text(data.result.lists[i].last_price);
+        $obj.find('.uptime').text(data.result.lists[i].uptime);
+
+      } catch (e) {
+        return false;
+      }
+    },
+    error: function (ex) {
+      alert(ex.status);
+      alert(ex.msg);
+    },
+    complete: function (XMLHttpRequest, textStatus) {
+      //alert(this.url);
+      //this;    //调用本次ajax请求时传递的options参数
+
+    }
+  });
+}
+
+setTimeout(function () {
+  for (var i = 0; i < inxids.length; i++) {
+    getdata(inxids[i]);
+  }
+}, 1000 * 60);
+
+$(document).on("click", "#SendEmail", function () {
+  var website = "enquiry@fargowealth.com.hk";
+  var subject = "华港财富";
+  var name = $('#name').val();
+  var tel = $('#tel').val();
+  var msg = $('#msg').val();
+  var body = "姓名：" + name + "<br/> 电话：" + tel + "<br />留言：" + msg;
+  var url = "mailto:" + website + "?subject=" + subject + "&body=" + body;
+  $("#SendEmai").val("href", url);
+  //return fasle;
+});
+
+var myChart = echarts.init(document.getElementById('china-map'));
+
+var cities = ['qingdao', 'suzhou', 'beijing', 'hangzhou', 'xianggang'];
+
+var citiesText = ['青岛', '苏州', '北京', '杭州', '香港'];
+
+
+var data = [
+  { name: '青岛', value: 8, color: '#b68a4a' },
+  { name: '苏州', value: 8, color: '#b68a4a' },
+  { name: '北京', value: 8, color: '#b68a4a' },
+  { name: '杭州', value: 8, color: '#b68a4a' },
+  { name: '香港', value: 8, color: '#bb1b23' }
+];
+
+var geoCoordMap = {
+  '青岛': [120.33, 36.07],
+  '苏州': [120.62, 32.32],
+  '北京': [116.46, 39.92],
+  '杭州': [120.19, 30.26],
+  '香港': [113.46, 22.26]
+};
+
+var convertData = function (data) {
+  var res = [];
+  for (var i = 0; i < data.length; i++) {
+    var geoCoord = geoCoordMap[data[i].name];
+    if (geoCoord) {
+      res.push({
+        name: data[i].name,
+        value: geoCoord.concat(data[i].value),
+        itemStyle: { color: data[i].color }
+      });
+    }
+  }
+  return res;
+};
+
+initEcharts("china", "中国");
+
+// 初始化echarts
+function initEcharts(pName, Chinese_) {
+
+  var option = {
+    title: {
+      show: false
+    },
+    geo: {
+      map: pName,
+      label: {
+        emphasis: {
+          show: false
+        }
+      },
+      itemStyle: {
+        normal: {
+          areaColor: '#e6e6e6',
+          borderColor: '#c0c0c0'
+        },
+        emphasis: {
+          areaColor: '#eee'
+        }
+      }
+    },
+    hoverLink: false,
+    series: [
+      {
+        type: 'effectScatter',
+        coordinateSystem: 'geo',
+        symbolSize: function (val) {
+          return val[2];
+        },
+        showEffectOn: 'emphasis',
+        rippleEffect: {
+          brushType: 'stroke'
+        },
+        hoverAnimation: true,
+        roam: false,//是否开启鼠标缩放和平移漫游
+        data: convertData(data),
+        top: "1%",//组件距离容器的距离
+        zoom: 1.1,
+        selectedMode: 'single',
+        label: {
+          normal: {
+            formatter: '{b}',
+            position: 'right',
+            show: true
+          }
+        },
+        textStyle: {
+          fontFamily: "SiYuan",
+          fontSize: 14
+        },
+        itemStyle: {
+          normal: {
+            borderWidth: .5,//区域边框宽度
+            //borderColor: '#c0c0c0',//区域边框颜色
+            //areaColor: "#e0e0e0"//区域颜色
+            //color: '#b68a4a',
+          },
+          emphasis: {
+            borderWidth: 1
+          }
+        }
+      }
+    ]
+
+  };
+
+  myChart.setOption(option);
+
+  myChart.off("click");
+
+  if (pName === "china") { // 全国时，添加click 进入省级
+    myChart.on('click', function (param) {
+      console.log(param.name);
+      var res = [];
+
+      // 遍历取到citiesText
+      for (var i = 0; i < citiesText.length; i++) {
+        if (param.name === citiesText[i]) {
+          data[i].color = '#bb1b23';
+          //var geoCoord = geoCoordMap[citiesText[i]];
+          //res.push({
+          //    name: param.name,
+          //    value: geoCoord.concat(data[i].value),
+          //    itemStyle: { color: '#bb1b23', }
+          //});
+          //显示对应城市的联系方法
+          var city = cities[i];
+          $('#city-list').find('tbody tr').hide().siblings('[data-city = ' + city + ']').show();
+          //break;
+        }
+        else {
+          data[i].color = '#b68a4a';
+          //var geoCoord = geoCoordMap[citiesText[i]];
+          //res.push({
+          //    name: citiesText[i],
+          //    value: geoCoord.concat(data[i].value),
+          //    itemStyle: { color: '#b68a4a', }
+          //});
+        }
+      }
+      myChart.setOption({
+        series: [
+          {
+            data: convertData(data)
+          }
+        ]
+      });
+
+    });
+  }
+}
+
+
+</script>
