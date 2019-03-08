@@ -191,6 +191,7 @@
       <h4>市场纵览</h4>
       <div class="underline"></div>
     </div>
+    <% data = ActiveSupport::JSON.decode($redis.get("last_request") || "{}")[:result] %>
     <div class="container container-fluid no-padding">
       <div class="row no-margin">
         <div class="table-responsive col-sm-6 cell">
@@ -208,29 +209,33 @@
               </tr>
               <tr class="table-item" data-index="1012">
                 <td>CSI 300 Index</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% d1012 = ActiveSupport::JSON.decode $redis.get("1012") %>
+                <td class="last_price"><%= d1012["last_price"] %></td>
+                <td class="uptime"><%= d1012["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-cn.png' %>" /></td>
                 <td class="nation" >[China]</td>
               </tr>
-              <tr class="table-item" data-index="1015">
+              <tr class="table-item" data-index="1015" data-no="">
                 <td>HSI</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% hsi = ActiveSupport::JSON.decode $redis.get("1015") %>
+                <td class="last_price"><%= hsi["last_price"] %></td>
+                <td class="uptime"><%= hsi["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-hk.png' %>" /></td>
                 <td>[Hong Kang]</td>
               </tr>
               <tr class="table-item" data-index="1020">
                 <td>Nikkei 225</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% nik = ActiveSupport::JSON.decode $redis.get("1020") %>
+                <td class="last_price"><%= nik["last_price"] %></td>
+                <td class="uptime"><%= nik["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-jp.png' %>" /></td>
                 <td>[Japan]</td>
               </tr>
               <tr class="table-item" data-index="1022">
                 <td>KOSPI</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% kos = ActiveSupport::JSON.decode $redis.get("1022") %>
+                <td class="last_price"><%= kos["last_price"] %></td>
+                <td class="uptime"><%= kos["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-kr.png' %>" /></td>
                 <td>[Korea]</td>
               </tr>
@@ -239,22 +244,25 @@
               </tr>
               <tr class="table-item" data-index="1111">
                 <td>DJIA</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% djia = ActiveSupport::JSON.decode $redis.get("1111") %>
+                <td class="last_price"><%= djia["last_price"] %></td>
+                <td class="uptime"><%= djia["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-us.png' %>" /></td>
                 <td>[America]</td>
               </tr>
               <tr class="table-item" data-index="1112">
                 <td>S&P 500</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% sp = ActiveSupport::JSON.decode $redis.get("1112") %>
+                <td class="last_price"><%= sp["last_price"] %></td>
+                <td class="uptime"><%= sp["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-us.png' %>" /></td>
                 <td>[America]</td>
               </tr>
               <tr class="table-item" data-index="1114">
                 <td>NASDAQ</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% nas = ActiveSupport::JSON.decode $redis.get("1114") %>
+                <td class="last_price"><%= nas["last_price"] %></td>
+                <td class="uptime"><%= nas["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-us.png' %>" /></td>
                 <td>[America]</td>
               </tr>
@@ -263,29 +271,33 @@
               </tr>
               <tr class="table-item" data-index="1217">
                 <td>FTSE 100</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% ftse = ActiveSupport::JSON.decode $redis.get("1217") %>
+                <td class="last_price"><%= ftse["last_price"] %></td>
+                <td class="uptime"><%= ftse["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-en.png' %>" /></td>
                 <td>[England]</td>
               </tr>
               <tr class="table-item" data-index="1241">
                 <td>CAC 40</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% cac = ActiveSupport::JSON.decode $redis.get("1241") %>
+                <td class="last_price"><%= cac["last_price"] %></td>
+                <td class="uptime"><%= cac["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-fr.png' %>" /></td>
                 <td>[France]</td>
               </tr>
               <tr class="table-item" data-index="1238">
                 <td>DAX</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% dax = ActiveSupport::JSON.decode $redis.get("1238") %>
+                <td class="last_price"><%= dax["last_price"] %></td>
+                <td class="uptime"><%= dax["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-de.jpg' %>" /></td>
                 <td>[Germany]</td>
               </tr>
               <tr class="table-item" data-index="1237">
                 <td>STOXX</td>
-                <td class="last_price">11523.81</td>
-                <td class="uptime">17:45:00</td>
+                <% sto = ActiveSupport::JSON.decode $redis.get("1237") %>
+                <td class="last_price"><%= sto["last_price"] %></td>
+                <td class="uptime"><%= sto["uptime"] %></td>
                 <td class="icon"><img src="<%= image_path 'icon-eu.png' %>" /></td>
                 <td>[Europe]</td>
               </tr>
@@ -404,11 +416,11 @@
 <script>
   var navBoxList = $('#nav-index a');
 var text = $('.location');
-window.onload = function () {
-  for (var i = 0; i < inxids.length; i++) {
-    getdata(inxids[i]);
-  }
-};
+//window.onload = function () {
+//  for (var i = 0; i < inxids.length; i++) {
+//    getdata(inxids[i]);
+//  }
+//};
 
 window.onscroll = function () {
   var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
@@ -470,41 +482,41 @@ $("#back-to-top").click(function () {
 
 var inxids = [1012, 1015, 1020, 1022, 1111, 1112, 1114, 1217, 1241, 1238, 1237];
 
-function getdata(i) {
-  $.ajax({
-    url: "http://api.k780.com/?app=finance.globalindex&inxids=" + i + "&appkey=38871&sign=1244e07a9067d25085e3d0d45e4acab0&format=json",
-    type: "get",
-    dataType: "jsonp",
-    jsonp: 'jsoncallback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
-    //jsonpCallback: 'data', //设置回调函数名
-    success: function (data) {
-      try {
-        //alert(data);
-        //alert(data.result.lists[i].last_price);
-        var $obj = $('#tb_view').find('.table-item[data-index=' + i + ']');
-        $obj.find('.last_price').text(data.result.lists[i].last_price);
-        $obj.find('.uptime').text(data.result.lists[i].uptime);
-
-      } catch (e) {
-        return false;
-      }
-    },
-    error: function (ex) {
-      alert(ex.status);
-      alert(ex.msg);
-    },
-    complete: function (XMLHttpRequest, textStatus) {
-      //alert(this.url);
-      //this;    //调用本次ajax请求时传递的options参数
-    }
-  });
-}
-
-setTimeout(function () {
-  for (var i = 0; i < inxids.length; i++) {
-    getdata(inxids[i]);
-  }
-}, 1000 * 60);
+//function getdata(i) {
+//  $.ajax({
+//    url: "http://api.k780.com/?app=finance.globalindex&inxids=" + i + "&appkey=38871&sign=1244e07a9067d25085e3d0d45e4acab0&format=json",
+//    type: "get",
+//    dataType: "jsonp",
+//    jsonp: 'jsoncallback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+//    //jsonpCallback: 'data', //设置回调函数名
+//    success: function (data) {
+//      try {
+//        //alert(data);
+//        //alert(data.result.lists[i].last_price);
+//        var $obj = $('#tb_view').find('.table-item[data-index=' + i + ']');
+//        $obj.find('.last_price').text(data.result.lists[i].last_price);
+//        $obj.find('.uptime').text(data.result.lists[i].uptime);
+//
+//      } catch (e) {
+//        return false;
+//      }
+//    },
+//    error: function (ex) {
+//      alert(ex.status);
+//      alert(ex.msg);
+//    },
+//    complete: function (XMLHttpRequest, textStatus) {
+//      //alert(this.url);
+//      //this;    //调用本次ajax请求时传递的options参数
+//    }
+//  });
+//}
+//
+//setTimeout(function () {
+//  for (var i = 0; i < inxids.length; i++) {
+//    getdata(inxids[i]);
+//  }
+//}, 1000 * 60);
 
 $(document).on("click", "#SendEmail", function () {
   var err = null

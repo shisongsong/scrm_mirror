@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'enumerize'
 
 gem 'whenever', require: false
+gem "typhoeus"
 
 gem 'sidekiq', '~> 5.1.3'
 # Use Redis adapter to run Action Cable in production

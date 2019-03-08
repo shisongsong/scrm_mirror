@@ -30,6 +30,7 @@ require "capistrano/rvm"
 # require "capistrano/rbenv"
 # require "capistrano/chruby"
 require "capistrano/bundler"
+require "whenever/capistrano"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations" unless ENV['disable_db'] == '1'
 require "capistrano/puma"
