@@ -11,7 +11,7 @@ module ApiSchedule
           #inxnos: "1012,1015,1020,1022,1111,1112,1114,1217,1241,1238,1237",
           inxids: no,
           appkey: "38871",
-          sign: "1244e07a9067d25085e3d0d45e4acab0",
+          sign: "81e5e12b0a1ae162a1c9895f4b2e3656",
           format: "json"
         }
       )
