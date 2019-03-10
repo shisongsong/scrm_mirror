@@ -10,8 +10,8 @@ module ApiSchedule
           app: "finance.globalindex",
           #inxnos: "1012,1015,1020,1022,1111,1112,1114,1217,1241,1238,1237",
           inxids: no,
-          appkey: "38871",
-          sign: "81e5e12b0a1ae162a1c9895f4b2e3656",
+          appkey: "40635",
+          sign: "2bb72d4a52ce6888eb622a850c18de2b",
           format: "json"
         }
       )

@@ -23,6 +23,6 @@ job_type :runner, "cd :path && bundle exec rails runner -e :environment ':task' 
 
 set :output, "log/cron.log"
 
-every 15.minute do
+every 4.minute do
   runner "ApiSchedule.call_nowapi"
 end
