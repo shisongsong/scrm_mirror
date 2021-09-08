@@ -83,7 +83,7 @@ group :development do
   gem 'capistrano-sidekiq', require: false
 
   gem 'annotate'
-  gem 'better_errors', '~> 2.4.0'
+  gem 'better_errors', '~> 2.8.0'
 end
 
 group :test do
